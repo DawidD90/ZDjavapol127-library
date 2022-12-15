@@ -1,4 +1,4 @@
 package pl.sdacademy;
 
-public class CBD {
+public class CBD  {
 }
