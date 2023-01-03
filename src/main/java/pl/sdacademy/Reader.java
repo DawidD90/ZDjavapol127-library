@@ -1,4 +1,4 @@
 package pl.sdacademy;
 
-public class a2 {
+public class Reader {
 }

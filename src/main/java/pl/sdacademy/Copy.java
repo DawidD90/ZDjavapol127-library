@@ -1,4 +1,4 @@
 package pl.sdacademy;
 
-public class a1 {
+public class Copy {
 }
