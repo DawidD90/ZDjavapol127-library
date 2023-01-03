@@ -16,6 +16,7 @@ public class Reader {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idreader")
     private int idReader;
     @Column(name = "first_name")
     private String firstName;

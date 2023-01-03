@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -27,6 +28,14 @@ public class Copy {
     private LocalDate borrowDate;
     @Column(name = "return_date")
     private LocalDate returnDate;
+
+    @ManyToOne
+    @JoinColumn(name = "idreader")
+    private Reader reader;
+
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Books books;
 
 
 }
