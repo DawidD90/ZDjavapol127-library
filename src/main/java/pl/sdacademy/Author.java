@@ -13,12 +13,12 @@ import java.util.Set;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int author_id;
     private String first_name;
     private String last_name;
 
-    @ManyToMany(mappedBy ="books",fetch= FetchType.EAGER)
-    private Set<Books> book;
+    @ManyToMany(mappedBy ="book_id",fetch= FetchType.EAGER)
+    private Set<Books> Books;
 
 
 

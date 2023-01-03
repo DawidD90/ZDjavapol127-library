@@ -27,7 +27,7 @@ public class Reader {
     private String phoneNumber;
 
     @OneToMany(mappedBy = "reader")
-    private List<Copy> cpoy;
+    private List<Copy> copy;
 
     public int getIdReader() {
         return idReader;
@@ -69,12 +69,12 @@ public class Reader {
         this.phoneNumber = phoneNumber;
     }
 
-    public List<Copy> getCpoy() {
-        return cpoy;
+    public List<Copy> getCopy() {
+        return copy;
     }
 
-    public void setCpoy(List<Copy> cpoy) {
-        this.cpoy = cpoy;
+    public void setCopy(List<Copy> copy) {
+        this.copy = copy;
     }
 
     @Override
@@ -85,7 +85,7 @@ public class Reader {
                 ", lastName='" + lastName + '\'' +
                 ", mail='" + mail + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", cpoy=" + cpoy +
+                ", cpoy=" + copy +
                 '}';
     }
 }
