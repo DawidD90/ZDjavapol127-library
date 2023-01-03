@@ -85,7 +85,7 @@ public class Reader {
                 ", lastName='" + lastName + '\'' +
                 ", mail='" + mail + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", cpoy=" + cpoy +
+                ", cpoy=" + copy +
                 '}';
     }
 }
