@@ -15,7 +15,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Definicja modeli -->
-        <mapping class="pl.sdacademy."/>
-        <mapping class="pl.sda.tabela.sprzedazy.module.Sprzedaz"/>
+        <mapping class="pl.sdacademy.Author"/>
+        <mapping class="pl.sdacademy.Books"/>
+        <mapping class="pl.sdacademy.Copy"/>
+        <mapping class="pl.sdacademy.Reader"/>
     </session-factory>
 </hibernate-configuration>
