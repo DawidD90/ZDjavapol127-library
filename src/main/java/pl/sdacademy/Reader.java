@@ -7,6 +7,9 @@ import java.util.List;
 @Entity
 public class Reader {
 
+    public Reader() {
+    }
+
     public Reader(String firstName, String lastName, String phoneNumber, String mail) {
         this.firstName = firstName;
         this.lastName = lastName;
