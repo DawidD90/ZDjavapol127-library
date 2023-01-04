@@ -13,7 +13,7 @@ public class Main {
         System.out.println("witamy w bibliotece,aby się zalogować proszę wpisać swoja imie i nazwisko");
        String account= scanner.nextLine();
 
-       if (account.equalsIgnoreCase(czyt1.getFirstName())){
+       if (account.equalsIgnoreCase(czyt1.getFirstName())&&account.equalsIgnoreCase(czyt1.getLastName())){
             System.out.println("test");
         }
         else
