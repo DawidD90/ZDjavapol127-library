@@ -11,7 +11,7 @@ public class Bookmethods implements InterfaceBook{
 
 
     @Override
-    public void AddBook() {
+    public void addBook() {
         em.getTransaction().begin();
         System.out.println("Wpisz tytuł");
         String tytul= scanner.nextLine();

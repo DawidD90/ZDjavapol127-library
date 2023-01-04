@@ -9,20 +9,11 @@ public class Main {
     public static void main(String[] args) {
 
 
-        HibernateUtil.shutdown();
-
-    }
-
-    private static void initData() {
-        em.getTransaction().begin();
-        Author author = new Author("Adam", "Mickiewicz");
-        em.persist(author);
-        em.getTransaction().commit();
-    }
-
-
+        InterfaceBook a1 = new Bookmethods();
+        a1.addBook();
 
 
     }
+}
 
 
