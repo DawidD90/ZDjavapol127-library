@@ -11,7 +11,8 @@ public class Main {
 
         InterfaceBook a1 = new Bookmethods();
         //a1.addBook();
-a1.removeBook();
+//a1.removeBook();
+        a1.ViewBook();
 
     }
 }

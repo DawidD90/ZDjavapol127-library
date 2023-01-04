@@ -39,11 +39,11 @@ public class Bookmethods implements InterfaceBook{
     @Override
     public void removeBook() {
         em.getTransaction().begin();
-        System.out.println("wpisz tytuł książki którą chcesz usunąć");
-        String skan= scanner.nextLine();
-                em.createQuery("DELETE FROM Books WHERE title=Krzyżacy")
+       System.out.println("wpisz tytuł książki którą chcesz usunąć");
+       String skan= scanner.nextLine();
+        em.createQuery("DELETE FROM Books WHERE bookId="+skan)
                         .executeUpdate();
-        em.remove(Books.title);
+
 
         em.getTransaction().commit();
     }
@@ -51,7 +51,7 @@ public class Bookmethods implements InterfaceBook{
 
     @Override
     public void ViewBook() {
-        TypedQuery<Books> abc=em.createQuery("from Books",Books.);
+        TypedQuery<Books> abc=em.createQuery("from Books",Books.class);
         List<Books> lista=abc.getResultList();
         for(Books book:lista){
             System.out.println(book);

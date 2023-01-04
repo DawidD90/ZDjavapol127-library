@@ -71,11 +71,11 @@ public class Books {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "book_id")
     private int bookId;
-    @Column
+    @Column(name = "title")
     private String title;
-    @Column
+    @Column(name = "publisher")
     private String publisher; //ewentualnie enum
-    @Column
+    @Column(name = "isbn")
     private String isbn;
 
 
