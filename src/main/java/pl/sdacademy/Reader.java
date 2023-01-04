@@ -1,20 +1,31 @@
 package pl.sdacademy;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+
 import java.util.List;
 
 @Entity
 public class Reader {
 
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
+    }
+
     public Reader() {
     }
 
-    public Reader(String firstName, String lastName, String phoneNumber, String mail) {
+    public Reader(String firstName, String lastName, String phoneNumber, String mail,Boolean isAdmin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mail = mail;
         this.phoneNumber = phoneNumber;
+        this.isAdmin =isAdmin;
+
+
     }
 
     @Id
@@ -29,6 +40,9 @@ public class Reader {
     private String mail;
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @Column(name="isAdmin")
+    private Boolean isAdmin;
 
     @OneToMany(mappedBy = "reader")
     private List<Copy> copy;
