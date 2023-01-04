@@ -1,15 +1,15 @@
 package pl.sdacademy;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
+
+
 
 @Entity
 public class Author {
@@ -22,8 +22,41 @@ public class Author {
     @ManyToMany(mappedBy ="bookId")
     private List<Books> books;
 
+    public Author(String first_name, String last_name) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+    }
 
 
+    public int getAuthor_id() {
+        return author_id;
+    }
 
+    public void setAuthor_id(int author_id) {
+        this.author_id = author_id;
+    }
 
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public List<Books> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Books> books) {
+        this.books = books;
+    }
 }
