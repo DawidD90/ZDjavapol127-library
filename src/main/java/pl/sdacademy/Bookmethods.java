@@ -1,7 +1,9 @@
 package pl.sdacademy;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Bookmethods implements InterfaceBook{
@@ -36,11 +38,24 @@ public class Bookmethods implements InterfaceBook{
 
     @Override
     public void removeBook() {
+        em.getTransaction().begin();
+        System.out.println("wpisz tytuł książki którą chcesz usunąć");
+        String skan= scanner.nextLine();
+                em.createQuery("DELETE FROM Books WHERE title=Krzyżacy")
+                        .executeUpdate();
+        em.remove(Books.title);
 
+        em.getTransaction().commit();
     }
+
 
     @Override
     public void ViewBook() {
+        TypedQuery<Books> abc=em.createQuery("from Books",Books.);
+        List<Books> lista=abc.getResultList();
+        for(Books book:lista){
+            System.out.println(book);
+        }
 
     }
 }

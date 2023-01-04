@@ -6,7 +6,6 @@ import lombok.*;
 import java.util.List;
 
 @Data
-
 @Entity
 @Builder
 @NoArgsConstructor
@@ -90,5 +89,7 @@ public class Books {
 
 
     @OneToMany(mappedBy = "books")
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
     private List<Copy> copies;
 }
