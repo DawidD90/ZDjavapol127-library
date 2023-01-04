@@ -59,7 +59,7 @@ public class Bookmethods implements InterfaceBook{
         }
 
     }
-
+@Override
     public void removeBook2() {
         em.getTransaction().begin();
         System.out.println("wpisz tytuł książki którą chcesz usunąć");

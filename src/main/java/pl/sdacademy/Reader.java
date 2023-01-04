@@ -1,10 +1,15 @@
 package pl.sdacademy;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+@Data
 @Entity
+@NoArgsConstructor
+
 public class Reader {
 
     public Boolean getAdmin() {
@@ -13,9 +18,6 @@ public class Reader {
 
     public void setAdmin(Boolean admin) {
         isAdmin = admin;
-    }
-
-    public Reader() {
     }
 
     public Reader(String firstName, String lastName, String phoneNumber, String mail,Boolean isAdmin) {
