@@ -1,12 +1,10 @@
 package pl.sdacademy;
 
-import java.util.List;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import java.util.List;
+
 @Data
 @Builder
 @Entity

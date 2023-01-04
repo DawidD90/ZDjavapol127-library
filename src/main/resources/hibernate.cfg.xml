@@ -7,7 +7,7 @@
         <property name="connection.url">jdbc:mysql://localhost:3306/library?severTimezone=Europe/Warsaw&amp;createDatabaseIfNotExist=true</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
-        <property name="connection.password">Rusek1998</property>
+        <property name="connection.password">dawid9013</property>
 
         <!-- DB schema will be updated if needed -->
         <!-- Hibernate Model To Data Definition Language        -->
