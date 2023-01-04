@@ -3,6 +3,7 @@ package pl.sdacademy;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -18,8 +19,8 @@ public class Author {
     private String first_name;
     private String last_name;
 
-    @ManyToMany(mappedBy ="book_id",fetch= FetchType.EAGER)
-    private Set<Books> Books;
+    @ManyToMany(mappedBy ="bookId")
+    private List<Books> books;
 
 
 

@@ -2,9 +2,13 @@ package pl.sdacademy;
 
 import java.util.List;
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
+@Data
+@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
