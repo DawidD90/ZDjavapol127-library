@@ -10,9 +10,11 @@ public class Main {
 
 
         InterfaceBook a1 = new Bookmethods();
+        Bookmethods a2=new Bookmethods();
         //a1.addBook();
 //a1.removeBook();
         a1.ViewBook();
+        a2.removeBook2();
 
     }
 }

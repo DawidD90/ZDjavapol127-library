@@ -1,6 +1,7 @@
 package pl.sdacademy;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public class Bookmethods implements InterfaceBook{
     @Override
     public void removeBook() {
         em.getTransaction().begin();
-       System.out.println("wpisz tytuł książki którą chcesz usunąć");
+       System.out.println("wpisz numer Id książki którą chcesz usunąć");
        String skan= scanner.nextLine();
         em.createQuery("DELETE FROM Books WHERE bookId="+skan)
                         .executeUpdate();
@@ -57,5 +58,17 @@ public class Bookmethods implements InterfaceBook{
             System.out.println(book);
         }
 
+    }
+
+    public void removeBook2() {
+        em.getTransaction().begin();
+        System.out.println("wpisz tytuł książki którą chcesz usunąć");
+        String skan= scanner.nextLine();
+        Query query = em.createQuery("DELETE FROM Books WHERE title = :title");
+        query.setParameter("title", skan)
+                .executeUpdate();
+        int rowsDeleted=query.executeUpdate();
+
+        em.getTransaction().commit();
     }
 }
