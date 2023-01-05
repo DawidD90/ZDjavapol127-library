@@ -7,10 +7,9 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 import java.util.Scanner;
 
-public class Bookmethods implements InterfaceBook{
+public class Bookmethods implements InterfaceBook {
     private static EntityManager em = HibernateUtil.getSessionFactory().createEntityManager();
-    public static final Scanner scanner=new Scanner(System.in);
-
+    public static final Scanner scanner = new Scanner(System.in);
 
 
     @Override
@@ -18,42 +17,52 @@ public class Bookmethods implements InterfaceBook{
         em.getTransaction().begin();
 
         System.out.println("Wpisz tytuł");
-        String tytul= scanner.nextLine();
+        String tytul = scanner.nextLine();
 
         System.out.println(" wydawnictwo");
-        String publisher= scanner.nextLine();
-
+        String publisher = scanner.nextLine();
 
 
         System.out.println(" isbn");
-        String isbn= scanner.nextLine();
+        String isbn = scanner.nextLine();
 
-        TypedQuery<Books> abc=em.createQuery("Select isbn from Books",Books.class);
-        List<Books> lista2=abc.getResultList();
+        System.out.println("podaj imie autora");
+        String imie = scanner.nextLine();
 
-        if(lista2.contains(isbn)){
+        System.out.println("podaj nazwisko autora");
+        String nazwisko = scanner.nextLine();
+
+        TypedQuery<Books> abc = em.createQuery("Select isbn from Books", Books.class);
+        List<Books> lista2 = abc.getResultList();
+
+        if (lista2.contains(isbn)) {
             System.out.println("error");
-        }
-        else
-        {
+        } else {
             Books books = Books.builder()
                     .title(tytul)
                     .publisher(publisher)
                     .isbn(isbn)
                     .build();
+
+            Author autor = Author.builder()
+                    .first_name(imie)
+                    .last_name(nazwisko)
+                    .build();
+
+            em.persist(autor);
             em.persist(books);
         }
-            em.getTransaction().commit();
-        }
+        em.getTransaction().commit();
+    }
 
 
     @Override
     public void removeBook() {
         em.getTransaction().begin();
-       System.out.println("wpisz numer Id książki którą chcesz usunąć");
-       String skan= scanner.nextLine();
-        em.createQuery("DELETE FROM Books WHERE bookId="+skan)
-                        .executeUpdate();
+        System.out.println("wpisz numer Id książki którą chcesz usunąć");
+        String skan = scanner.nextLine();
+        em.createQuery("DELETE FROM Books WHERE bookId=" + skan)
+                .executeUpdate();
 
 
         em.getTransaction().commit();
@@ -62,22 +71,23 @@ public class Bookmethods implements InterfaceBook{
 
     @Override
     public void ViewBook() {
-        TypedQuery<Books> abc=em.createQuery("from Books",Books.class);
-        List<Books> lista=abc.getResultList();
-        for(Books book:lista){
+        TypedQuery<Books> abc = em.createQuery("from Books", Books.class);
+        List<Books> lista = abc.getResultList();
+        for (Books book : lista) {
             System.out.println(book);
         }
 
     }
-@Override
+
+    @Override
     public void removeBook2() {
         em.getTransaction().begin();
         System.out.println("wpisz tytuł książki którą chcesz usunąć");
-        String skan= scanner.nextLine();
+        String skan = scanner.nextLine();
         Query query = em.createQuery("DELETE FROM Books WHERE title = :title");
         query.setParameter("title", skan)
                 .executeUpdate();
-        int rowsDeleted=query.executeUpdate();
+        int rowsDeleted = query.executeUpdate();
 
         em.getTransaction().commit();
     }

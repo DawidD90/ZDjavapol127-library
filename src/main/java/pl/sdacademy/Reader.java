@@ -20,12 +20,12 @@ public class Reader {
         isAdmin = admin;
     }
 
-    public Reader(String firstName, String lastName, String phoneNumber, String mail,Boolean isAdmin) {
+    public Reader(String firstName, String lastName, String phoneNumber, String mail, Boolean isAdmin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mail = mail;
         this.phoneNumber = phoneNumber;
-        this.isAdmin =isAdmin;
+        this.isAdmin = isAdmin;
 
 
     }
@@ -43,7 +43,7 @@ public class Reader {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name="isAdmin")
+    @Column(name = "isAdmin")
     private Boolean isAdmin;
 
     @OneToMany(mappedBy = "reader")

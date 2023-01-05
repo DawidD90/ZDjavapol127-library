@@ -5,17 +5,15 @@ import jakarta.persistence.EntityManager;
 import java.util.Scanner;
 
 public class Main {
-    public static final Scanner scanner=new Scanner(System.in);
+    public static final Scanner scanner = new Scanner(System.in);
     private static EntityManager em = HibernateUtil.getSessionFactory().createEntityManager();
 
     public static void main(String[] args) {
 
-        AuthorMethods a3=new AuthorMethods();
+        AuthorMethods a3 = new AuthorMethods();
 
         a3.Autorzy();
 //a3.dodajAutora();
-
-
 
 
 //        Reader czyt1=new Reader("Dawid","Durka","484848484","4dadawda@onet.pl",true);

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -52,11 +53,11 @@ public class Books {
         this.isbn = isbn;
     }
 
-    public List<Author> getAuthors() {
+    public Set<Author> getAuthors() {
         return authors;
     }
 
-    public void setAuthors(List<Author> authors) {
+    public void setAuthors(Set<Author> authors) {
         this.authors = authors;
     }
 
@@ -86,11 +87,18 @@ public class Books {
             joinColumns = {@JoinColumn(name = "book_id")},
             inverseJoinColumns = {@JoinColumn(name = "author_id")}
     )
-    private List<Author> authors;
+    private Set<Author> authors;
 
 
     @OneToMany(mappedBy = "books")
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private List<Copy> copies;
+
+
+    public void dodawanieautora(Author author)
+    {
+        authors.add(author);
+
+    }
 }

@@ -62,7 +62,9 @@ public class Author {
     }
 
 
-    public void dodawanieksiazki() {
+    public void dodawanieksiazki(Books book)
+    {
+        books.add(book);
 
     }
 }
