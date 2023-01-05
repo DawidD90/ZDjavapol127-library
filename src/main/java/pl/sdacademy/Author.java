@@ -8,9 +8,6 @@ import java.util.List;
 
 @Data
 
-
-
-
 @Entity
 @NoArgsConstructor
 public class Author {

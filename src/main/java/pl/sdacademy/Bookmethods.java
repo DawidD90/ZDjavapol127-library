@@ -23,6 +23,11 @@ public class Bookmethods implements InterfaceBook{
         System.out.println(" wydawnictwo");
         String publisher= scanner.nextLine();
 
+        System.out.println("podaj imie i naziwsko autora");
+        String author= scanner.nextLine();
+
+
+
         System.out.println(" isbn");
         String isbn= scanner.nextLine();
 

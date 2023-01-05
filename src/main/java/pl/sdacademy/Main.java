@@ -9,9 +9,17 @@ public class Main {
     private static EntityManager em = HibernateUtil.getSessionFactory().createEntityManager();
 
     public static void main(String[] args) {
+
+        AuthorMethods a3=new AuthorMethods();
+        a3.Autorzy();
+
+        Books book1=new Books("Abc","abbb","123435",);
+
+
+
+
 //        Reader czyt1=new Reader("Dawid","Durka","484848484","4dadawda@onet.pl",true);
 //        System.out.println("witamy w bibliotece,aby się zalogować proszę wpisać swoja imie i nazwisko");
-       String account= scanner.nextLine();
 
 //       if (account.equalsIgnoreCase(czyt1.getFirstName())&&account.equalsIgnoreCase(czyt1.getLastName())){
 //            System.out.println("test");
@@ -31,11 +39,11 @@ public class Main {
 //        }
 
 
-        InterfaceBook a1 = new Bookmethods();
-//        Bookmethods a2=new Bookmethods();
+//        InterfaceBook a1 = new Bookmethods();
+////        Bookmethods a2=new Bookmethods();
         //a1.addBook();
 //a1.removeBook();
-       a1.addBook();
+//       a1.ViewBook();
 //        a2.removeBook2();
 
     }
