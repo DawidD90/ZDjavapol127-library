@@ -16,6 +16,7 @@ public class Bookmethods implements InterfaceBook{
     @Override
     public void addBook() {
         em.getTransaction().begin();
+
         System.out.println("Wpisz tytuł");
         String tytul= scanner.nextLine();
 
@@ -25,17 +26,24 @@ public class Bookmethods implements InterfaceBook{
         System.out.println(" isbn");
         String isbn= scanner.nextLine();
 
-        Books books=Books.builder()
-                .title(tytul)
-                .publisher(publisher)
-                .isbn(isbn)
-                .build();
+        TypedQuery<Books> abc=em.createQuery("Select isbn from Books",Books.class);
+        List<Books> lista2=abc.getResultList();
 
+        if(lista2.contains(isbn)){
+            System.out.println("error");
+        }
+        else
+        {
+            Books books = Books.builder()
+                    .title(tytul)
+                    .publisher(publisher)
+                    .isbn(isbn)
+                    .build();
+            em.persist(books);
+        }
+            em.getTransaction().commit();
+        }
 
-        em.persist(books);
-        em.getTransaction().commit();
-
-    }
 
     @Override
     public void removeBook() {
